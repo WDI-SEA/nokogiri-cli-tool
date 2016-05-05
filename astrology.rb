@@ -7,6 +7,8 @@ def whats_your_sign
 
   signs = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
 
+  #do a each and change to positive validation instead of negative validation
+
   if sign != "aries" &&
      sign != "taurus" &&
      sign != "gemini" &&
