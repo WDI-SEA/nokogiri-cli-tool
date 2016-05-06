@@ -1,0 +1,34 @@
+require 'rest-client'
+require 'nokogiri'
+
+def get_dem_links 
+  puts "What are we looking for?"
+  q = gets.chomp.downcase
+
+
+  #define getting data from - in this case LOTR works' tags from a fanfiction website
+  url = "https://en.wikipedia.org/wiki/#{q}"
+  puts "fetching data from #{url}"
+
+  #request data
+  response = RestClient.get(url)
+  html = response.body
+
+  #local info
+  # html = File.open('LOTR.htm')
+
+  #give to nokogiri
+  data = Nokogiri::HTML(html)
+
+  #define target
+  selector = "p a"
+
+  #select data using CSS selector
+  elements = data.css(selector)
+
+  elements.each do |el|
+    puts el.text.strip
+  end
+end
+
+get_dem_links
