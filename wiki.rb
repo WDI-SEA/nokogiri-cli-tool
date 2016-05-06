@@ -29,6 +29,15 @@ def get_dem_links
   elements.each do |el|
     puts el.text.strip
   end
+
+  puts "Want to search for anything else? (yes/no)"
+  yes_no = gets.chomp
+
+  if yes_no == "yes" || yes_no == "y"
+    get_dem_links
+  else
+    puts "Thanks for searching!"
+  end
 end
 
 get_dem_links
