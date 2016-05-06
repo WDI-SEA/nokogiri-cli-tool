@@ -27,7 +27,9 @@ def get_dem_links
   elements = data.css(selector)
 
   elements.each do |el|
-    puts el.text.strip
+    if el[:href].include? "/wiki/"
+      puts el.text.strip
+    end
   end
 
   puts "Want to search for anything else? (yes/no)"
