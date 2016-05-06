@@ -3,8 +3,8 @@ require 'nokogiri'
 
 def get_dem_links 
   puts "What are we looking for?"
-  q = gets.chomp.downcase
-
+  q = gets.chomp.downcase.tr(" ", "_")
+  puts "#{q}"
 
   #define getting data from - in this case LOTR works' tags from a fanfiction website
   url = "https://en.wikipedia.org/wiki/#{q}"
